@@ -50,6 +50,7 @@
                     </metadataRepository>
                     <requiredVersion>17</requiredVersion>
                     <imageName>springDemo</imageName>
+                    <buildArgs>-O0 --native-compiler-options=-Og</buildArgs>
                 </configuration>
             </plugin>
             <plugin>
