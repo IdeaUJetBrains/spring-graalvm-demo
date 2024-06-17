@@ -60,6 +60,6 @@ Currently spring native build based on buildpacks (perhaps plugin should be more
    -  "Symbol file" field: target\springDemo.debug
 6. Run Debug   
 
-Result: 
--we have Debug view opened
--if we set the breakpoint on the home() endpoint then we need to send a http request to the app. The application port we can find on the "GraalVm on Docker console" tab, for example: "Application port  is bounded to local port 62724". So, we go to the page http://localhost:62724 and the debug stops on this breakpoint.
+Result: we have Debug view opened
+
+Note: if we set the breakpoint on the home() endpoint then we need to send a http request to the app. The application port we can find on the "GraalVm on Docker console" tab, for example: "Application port  is bounded to local port 62724". So, we go to the page http://localhost:62724 and the debug stops on this breakpoint.
