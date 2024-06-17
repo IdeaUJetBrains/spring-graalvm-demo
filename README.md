@@ -45,5 +45,21 @@ Currently spring native build based on buildpacks (perhaps plugin should be more
         </profile>
     </profiles>
 ```
-2. After import edit (maven before run task): `-P native package` and working directory.
-3. 
+2. Create a maven task with 
+   - Run: -P native package
+   - Working directory:spring-graalvm-demo
+   - Run on:  
+     - click on "Manage targets..." link
+     - click on "+"->select "Docker"->enter path to the Dockerfile, if not present: src\main\docker\Dockerfile
+     - click Create 
+   - select the created target in the "Run on" field (it is not selected automatically)
+3. Save the created maven run configuration
+4. Run this maven configuration (it takes time)
+5. Create a "GraalVM Native Image" run configuration
+   - "Executable" field: target\springDemo
+   -  "Symbol file" field: target\springDemo.debug
+6. Run Debug   
+
+Result: 
+-we have Debug view opened
+-if we set the breakpoint on the home() endpoint then we need to send a http request to the app. The application port we can find on the "GraalVm on Docker console" tab, for example: "Application port  is bounded to local port 62724". So, we go to the page http://localhost:62724 and the debug stops on this breakpoint.
